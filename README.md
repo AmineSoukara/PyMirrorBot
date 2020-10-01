@@ -20,7 +20,7 @@ This project is heavily inspired from @out386 's telegram bot which is written i
 - Index Link support
 - List will be uploaded in telegraph
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy/https://github.com/AmineSoukara/PyMirrorBot.git)
 
 # Bot commands to be set in botfather
 
@@ -47,7 +47,7 @@ Deploying is pretty much straight forward and is divided into several steps as f
 
 - Clone this repo:
 ```
-git clone https://github.com/DakshVV/python-mirror-bot.git
+git clone https://github.com/AmineSoukara/PyMirrorBot.git
 ```
 
 - Install requirements
