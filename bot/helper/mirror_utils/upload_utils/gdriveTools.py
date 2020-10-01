@@ -319,7 +319,7 @@ class GoogleDriveHelper:
             if meta.get("mimeType") == self.__G_DRIVE_DIR_MIME_TYPE:
                 dir_id = self.create_directory(meta.get('name'), parent_id)
                 result = self.cloneFolder(meta.get('name'), meta.get('name'), meta.get('id'), dir_id)
-                msg += f'<b>Filename : </b><code>{meta.get("name")}</code>\n<b>Size : </b>{get_readable_file_size(self.transferred_size)}'
+                msg += f'<b>📁 Filename : </b><code>{meta.get("name")}</code>\n<b>💾 Size : </b>{get_readable_file_size(self.transferred_size)}'
                 buttons = button_build.ButtonMaker()
                 buttons.buildbutton("⚡Drive Link⚡", self.__G_DRIVE_DIR_BASE_DOWNLOAD_URL.format(dir_id))
                 if INDEX_URL is not None:
@@ -333,11 +333,11 @@ class GoogleDriveHelper:
                     buttons.buildbutton(f"{BUTTON_FIVE_NAME}", f"{BUTTON_FIVE_URL}")
             else:
                 file = self.copyFile(meta.get('id'), parent_id)
-                msg += f'<b>Filename : </b><code>{file.get("name")}</code>'
+                msg += f'<b>📁 Filename :</b> <code>{file.get("name")}</code>'
                 buttons = button_build.ButtonMaker()
                 buttons.buildbutton("⚡Drive Link⚡", self.__G_DRIVE_BASE_DOWNLOAD_URL.format(file.get("id")))
                 try:
-                    msg += f'\n<b>Size : </b><code>{get_readable_file_size(int(meta.get("size")))}</code>'
+                    msg += f'\n<b>💾 Size :</b> <code>{get_readable_file_size(int(meta.get("size")))}</code>'
                 except TypeError:
                     pass
                 if INDEX_URL is not None:
@@ -494,7 +494,7 @@ class GoogleDriveHelper:
 
             for file in response.get('files', []):
                 if file.get('mimeType') == "application/vnd.google-apps.folder":  # Detect Whether Current Entity is a Folder or File.
-                    msg += f"⁍<code>{file.get('name')}<br>(folder📁)</code><br>" \
+                    msg += f"⁍<code>{file.get('name')}<br>(📁 Folder)</code><br>" \
                            f"<b><a href='https://drive.google.com/drive/folders/{file.get('id')}'>Drive Link</a></b>"
                     if INDEX_URL is not None:
                         url = requests.utils.requote_uri(f'{INDEX_URL}/{file.get("name")}/')
@@ -532,7 +532,7 @@ class GoogleDriveHelper:
             if self.num_of_path > 1:
                 self.edit_telegraph()
 
-            msg = f"<b>✴️Search Results✴️\n For {fileName} </b>"
+            msg = f"<b>✴️ Search Results ✴️\n For {fileName} </b>"
             buttons = button_build.ButtonMaker()   
             buttons.buildbutton("Click Here", f"https://telegra.ph/{self.path[0]}")
 
