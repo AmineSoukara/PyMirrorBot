@@ -8,8 +8,8 @@
       "aria",
       "python"
     ],
-    "repository": "https://github.com/DakshVV/LEECHER.git",
-    "website": "https://github.com/DakshVV/LEECHER/tree/master",
+    "repository": "https://github.com/AmineSoukara/PyMirrorBot.git",
+    "website": "https://github.com/AmineSoukara/PyMirrorBot/tree/master",
     "success_url": "https://github.com/lzzy12/python-aria-mirror-bot/blob/master/README.md",
     "stack": "container",
     "env": {
