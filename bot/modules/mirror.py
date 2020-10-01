@@ -136,7 +136,7 @@ class MirrorListener(listeners.MirrorListeners):
 
     def onUploadComplete(self, link: str):
         with download_dict_lock:
-            msg = f'<b>Filename : </b><code>{download_dict[self.uid].name()}</code>\n<b>Size : </b><code>{download_dict[self.uid].size()}</code>'
+            msg = f'<b>📁 Filename : </b><code>{download_dict[self.uid].name()}</code>\n<b>💾 Size : </b><code>{download_dict[self.uid].size()}</code>'
             buttons = button_build.ButtonMaker()
             buttons.buildbutton("⚡Drive Link⚡", link)
             LOGGER.info(f'Done Uploading {download_dict[self.uid].name()}')
